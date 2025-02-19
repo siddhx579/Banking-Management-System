@@ -3,15 +3,14 @@ package org.example.Model;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter public class Employee extends User{
-    private String employeeId;
-    private String department;
-    private double salary;
+@Getter
+@Setter
+public class Employee extends User {
+    public Employee(String name, String userId, String email, String password){
+        super(name, userId, email, password);
+    };
 
-    public Employee(String id, String name, String email, String password, String employeeId, String department, double salary){
-        super(id, name, email, password, "Employee");
-        this.employeeId = employeeId;
-        this.department = department;
-        this.salary = salary;
+    public String getUserType(){
+        return "Employee";
     }
 }
